@@ -1,10 +1,11 @@
-//Variables
 
 var userChoice;
 
 var correctAnswers = 0;
 
 var incorrectAnswer = 0;
+
+var unanswered = 0;
 
 var questionCount = 0;
 
@@ -63,7 +64,40 @@ var myQuestions = [
     answer3: "Cork Taint",
    
     correctAnswer: "Cork Taint",
+  },{
+    question: "What is ‘Cava’?",
+
+    answer1: "The grape used for Spanish sparkling wine", 
+    answer2: "The French term for a wine cellar", 
+    answer3: "Sparkling wines made in Spain",
+   
+    correctAnswer: "Sparkling wines made in Spain",
+  },{
+    question: "Which wine is sometimes opened with a sword?",
+
+    answer1: "Vin de sabre", 
+    answer2: "Champagne", 
+    answer3: "Port",
+   
+    correctAnswer: "Champagne",
+  },{
+    question: "which claims to be the oldest continuously operating winery in the Napa Valley?",
+
+    answer1: "Beringer", 
+    answer2: "Mondavi", 
+    answer3: "Gallo",
+   
+    correctAnswer: "Beringer",
+  },{
+    question: "Fermenting in small oak barrels is common for which variety?",
+
+    answer1: "Riesling", 
+    answer2: "Chardonnay", 
+    answer3: "Sauvignon Blanc",
+   
+    correctAnswer: "Chardonnay",
   }];
+
 
 //Timer functions
 function run() {
@@ -96,6 +130,7 @@ function stop() {
 }
 
 //Let's begin!
+
 $("#start").click(run);
 
 function loadQuestion(){
@@ -104,13 +139,13 @@ function loadQuestion(){
   
   $("#question").text(question.question);
 
-  $("#answer1").text(question.answer1);
+  $("#answer1").html(question.answer1);
   $("#answer2").text(question.answer2);
   $("#answer3").text(question.answer3);
 }
 
 $("#next").click(function(){
-  getAnswer();
+  //getAnswer();
     if (questionCount === myQuestions.length){
       stop();
      } else{
@@ -119,6 +154,7 @@ $("#next").click(function(){
         loadQuestion();
      }
 })
+
 
 function timerReset(){
   time = 31;
@@ -132,8 +168,9 @@ function results(){
   $("#incorrect").text("Incorrect Answers: " + incorrectAnswer);
 }
 
+/*
 function getAnswer(){
- if (userChoice = question.correctAnswer){
+ if ((userChoice) === (myQuestions[questionCount].correctAnswer)){
     correctAnswers++;
     console.log("Correct Answers: " + correctAnswers);
     console.log("Incorrect Answers: " + incorrectAnswer);
@@ -143,6 +180,7 @@ function getAnswer(){
     console.log("Incorrect Answers: " + incorrectAnswer);
  }
 }
+*/
 
 
 
