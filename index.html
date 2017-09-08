@@ -17,31 +17,59 @@
 </head>
 <body>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h1>Totally Trivial Trivia</h1>
-		</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="container">
-						<div id="start-page">
-							<button id="start">Let's Begin!</button>
-
-						</div>
-
-						<div id="quiz" class="display">
-							<div id="timer"></div>
-							<button id="button" class="btn pill"></button>
-							<div id="results"></div>
-							<button id="submit">Submit Answers</button>
-						</div>
-					</div>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Test Your Inner Sommelier</h1>
 			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+		
+				<section id="pages">
+					
+					<!--Start Page -->
+					<div id="start-page">
+						<h4>INSTRUCTIONS</h4>
+						<p>This quiz on random wine facts has 10 multiple choice questions. You will have 30 seconds to answer each question. Good Luck!</p>
+						<button id="start">Start</button>
+					</div>
+
+					<!--Questions Pages -->
+					<div id="quiz" class="quizDisplay">
+						<div id="timer"></div>
+
+						<h4 id="question">Question goes here</h4>
+
+						<div id="answers">
+							<form>
+								<input type="radio" name="answer" value="answer1" class="radio">
+								<h3 id="answer1"></h3>
+								<input type="radio" name="answer" value="answer2" class="radio">
+								<h3 id="answer2"></h3>
+								<input type="radio" name="answer" value="answer3" class="radio">
+								<h3 id="answer3"></h3>
+							</form>
+
+							<button id="next">Next</button>
+							<button id="submit" class="submitDisplay">Your Results</button>
+						</div>
+					</div>	
+
+					<!--Results Display-->
+					<div id="results" class="resultsDisplay">
+						<h4>Your Results</h4>
+
+						<h3 id="correct">Correct Answers:</h3>
+
+						<h3 id="incorrect">Incorrect Answers:</h3>
+					</div>
+
+				</section>
+			</div>
+		</div>
 	</div>
-
-
-
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
