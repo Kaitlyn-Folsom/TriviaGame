@@ -1,186 +1,195 @@
-
-var userChoice;
-
-var correctAnswers = 0;
-
-var incorrectAnswer = 0;
-
-var unanswered = 0;
-
-var questionCount = 0;
-
-var time = 30;
-
-var intervalId;
-
-var isRunning = false;
+var panel = $("#quiz-area");
+var timeStart = 30;
 
 var myQuestions = [
   {
     question: "What is the dominant grape in Chianti wines?",
-
-    answer1: "Sangiovese", 
-    answer2: "Dolcetto", 
-    answer3: "Zinfandel",
-   
+    answers: ["Sangiovese", "Dolcetto", "Zinfandel"],
     correctAnswer: "Sangiovese",
+    image: "assets/images/sangiovese-grape.jpg"
   },{
     question: "What country is generally acknowledged to be the birthplace of wine?",
-
-    answer1: "France", 
-    answer2: "Georgia", 
-    answer3: "Romania",
-   
+    answers: ["France", "Georgia", "Romania"],
     correctAnswer: "Georgia",
+    image: "assets/images/georgia.jpg"
   },{
     question: "Rioja is a wine from Spain, but what is Rioja?",
-
-    answer1: "A variety of grape", 
-    answer2: "A region in northern Spain", 
-    answer3: "A Spanish word meaning 'King of wines'",
-   
+    answers: ["A variety of grape", "A region in northern Spain", "A Spanish word meaning 'King of wines'"],
     correctAnswer: "A region on northern Spain",
+    image: "assets/images/sangiovese-grape.jpg"
   },{
     question: "In Portugal, what is a ‘Quinta’?",
-
-    answer1: "The vintage or year of harvest", 
-    answer2: "A wine-making estate", 
-    answer3: "A variety of grape used in vintage port",
-   
+    answers: ["The vintage or year of harvest", "A wine-making estate", "A variety of grape used in vintage port"],
     correctAnswer: "A wine-making estate",
+    image: "assets/images/sangiovese-grape.jpg"
   },{
     question: "Where is the wine region of Mendoza?",
-
-    answer1: "Argentina", 
-    answer2: "Chile", 
-    answer3: "Spain",
-   
+    answers: ["Argentina", "Chile", "Spain"],
     correctAnswer: "Argentina",
+    image: "assets/images/sangiovese-grape.jpg"
   },{
     question: "Trichloranisole is more commonly known as what?",
-
-    answer1: "Residual Sugar", 
-    answer2: "Fruit Acid", 
-    answer3: "Cork Taint",
-   
+    answers: ["Residual Sugar", "Fruit Acid", "Cork Taint"],
     correctAnswer: "Cork Taint",
+    image: "assets/images/cork.gif"
   },{
     question: "What is ‘Cava’?",
-
-    answer1: "The grape used for Spanish sparkling wine", 
-    answer2: "The French term for a wine cellar", 
-    answer3: "Sparkling wines made in Spain",
-   
+    answers: ["The grape used for Spanish sparkling wine", "The French term for a wine cellar", "Sparkling wines made in Spain"],
     correctAnswer: "Sparkling wines made in Spain",
+    image: "assets/images/sangiovese-grape.jpg"
   },{
     question: "Which wine is sometimes opened with a sword?",
-
-    answer1: "Vin de sabre", 
-    answer2: "Champagne", 
-    answer3: "Port",
-   
+    answers: ["Vin de sabre", "Champagne", "Port"],
     correctAnswer: "Champagne",
+    image: "assets/images/sword.gif"
   },{
     question: "which claims to be the oldest continuously operating winery in the Napa Valley?",
-
-    answer1: "Beringer", 
-    answer2: "Mondavi", 
-    answer3: "Gallo",
-   
+    answers: ["Beringer", "Mondavi", "Gallo"],
     correctAnswer: "Beringer",
+    image: "assets/images/beringer.jpg"
   },{
     question: "Fermenting in small oak barrels is common for which variety?",
-
-    answer1: "Riesling", 
-    answer2: "Chardonnay", 
-    answer3: "Sauvignon Blanc",
-   
+    answers: ["Riesling", "Chardonnay", "Sauvignon Blanc"],
     correctAnswer: "Chardonnay",
+    image: "assets/images/sangiovese-grape.jpg"
   }];
 
+var timer;
 
-//Timer functions
-function run() {
-  if(!isRunning){
-    intervalId = setInterval(decrement, 1000);
-    isRunning = true;
-    $("#start-page").hide();
+var game = {
+
+  questions: myQuestions,
+  currentQuestion: 0,
+  counter: timeStart,
+  correct: 0,
+  incorrect: 0,
+
+  countdown: function() {
+    this.counter--;
+    $("#counter-number").html(this.counter);
+    if (this.counter === 0) {
+      console.log("TIME UP");
+      this.timeUp();
+    }
+  },
+
+  loadQuestion: function() {
+
+    timer = setInterval(this.countdown.bind(this), 1000);
+
+    panel.html("<h2>" + myQuestions[this.currentQuestion].question + "</h2>");
+
+    for (var i = 0; i < myQuestions[this.currentQuestion].answers.length; i++) {
+      panel.append("<button class='answer-button' id='button' data-name='" + myQuestions[this.currentQuestion].answers[i]
+      + "'>" + myQuestions[this.currentQuestion].answers[i] + "</button>");
+    }
+  },
+
+  nextQuestion: function() {
+    this.counter = window.timeStart;
+    $("#counter-number").html(this.counter);
+    this.currentQuestion++;
+    this.loadQuestion.bind(this)();
+  },
+
+  timeUp: function() {
+
+    clearInterval(window.timer);
+
+    $("#counter-number").html(this.counter);
+
+    panel.html("<h2>Out of Time!</h2>");
+    panel.append("<h3>The Correct Answer was: " + myQuestions[this.currentQuestion].correctAnswer);
+    panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
+
+    if (this.currentQuestion === myQuestions.length - 1) {
+      setTimeout(this.results, 3 * 1000);
+    }
+    else {
+      setTimeout(this.nextQuestion, 3 * 1000);
+    }
+  },
+
+  results: function() {
+
+    clearInterval(window.timer);
+
+    panel.html("<h2>All done, heres how you did!</h2>");
+
+    $("#counter-number").html(this.counter);
+
+    panel.append("<h3>Correct Answers: " + this.correct + "</h3>");
+    panel.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+    panel.append("<h3>Unanswered: " + (myQuestions.length - (this.incorrect + this.correct)) + "</h3>");
+    panel.append("<br><button id='start-over'>Start Over?</button>");
+  },
+
+  clicked: function(e) {
+    clearInterval(window.timer);
+    if ($(e.target).attr("data-name") === myQuestions[this.currentQuestion].correctAnswer) {
+      this.answeredCorrectly();
+    }
+    else {
+      this.answeredIncorrectly();
+    }
+  },
+
+  answeredIncorrectly: function() {
+
+    this.incorrect++;
+
+    clearInterval(window.timer);
+
+    panel.html("<h2>Nope!</h2>");
+    panel.append("<h3>The Correct Answer was: " + myQuestions[this.currentQuestion].correctAnswer + "</h3>");
+    panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
+
+    if (this.currentQuestion === myQuestions.length - 1) {
+      setTimeout(this.results.bind(this), 3 * 1000);
+    }
+    else {
+      setTimeout(this.nextQuestion.bind(this), 3 * 1000);
+    }
+  },
+
+  answeredCorrectly: function() {
+
+    clearInterval(window.timer);
+
+    this.correct++;
+
+    panel.html("<h2>Correct!</h2>");
+    panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
+
+    if (this.currentQuestion === myQuestions.length - 1) {
+      setTimeout(this.results.bind(this), 3 * 1000);
+    }
+    else {
+      setTimeout(this.nextQuestion.bind(this), 3 * 1000);
+    }
+  },
+
+  reset: function() {
+    this.currentQuestion = 0;
+    this.counter = timeStart;
+    this.correct = 0;
+    this.incorrect = 0;
+    this.loadQuestion();
   }
-    if (isRunning = true){
-    $("#quiz").removeClass("quizDisplay");
-    }
-  
-  loadQuestion();
-}
+}; //End Game
 
-function decrement() {
-  time--;
-  $("#timer").html("Remaining Time: " + time);
-    if (time === 0) {
-    stop();
-    alert("You ran out of time!");
-    }
-}
+// =================CLICK EVENTS ===============
 
-function stop() {
-  clearInterval(intervalId);
-  isRunning = false;
-  
-  results();
-}
+//Start Over
+$(document).on("click", "#start-over", game.reset.bind(game));
 
-//Let's begin!
+$(document).on("click", ".answer-button", function(e) {
+  game.clicked.bind(game, e)();
+});
 
-$("#start").click(run);
-
-function loadQuestion(){
-  var question = myQuestions[questionCount++]
-  console.log("Answer: " + question.correctAnswer);
-  
-  $("#question").text(question.question);
-
-  $("#answer1").html(question.answer1);
-  $("#answer2").text(question.answer2);
-  $("#answer3").text(question.answer3);
-}
-
-$("#next").click(function(){
-  //getAnswer();
-    if (questionCount === myQuestions.length){
-      stop();
-     } else{
-        $('input[name="answer"]').prop('checked', false);
-        timerReset();
-        loadQuestion();
-     }
-})
-
-
-function timerReset(){
-  time = 31;
-}
-
-//Display Results
-function results(){
-  $("#quiz").addClass("quizDisplay");
-  $("#results").removeClass("resultsDisplay");
-  $("#correct").text("Correct Answers: " + correctAnswers);
-  $("#incorrect").text("Incorrect Answers: " + incorrectAnswer);
-}
-
-/*
-function getAnswer(){
- if ((userChoice) === (myQuestions[questionCount].correctAnswer)){
-    correctAnswers++;
-    console.log("Correct Answers: " + correctAnswers);
-    console.log("Incorrect Answers: " + incorrectAnswer);
- } else {
-    incorrectAnswer++;
-    console.log("Correct Answers: " + correctAnswers);
-    console.log("Incorrect Answers: " + incorrectAnswer);
- }
-}
-*/
-
-
+//Start Quiz
+$(document).on("click", "#start", function() {
+  $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>");
+  game.loadQuestion.bind(game)();
+});
 

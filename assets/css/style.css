@@ -1,48 +1,55 @@
 body{
 	text-align:center;
+	background: url("../images/red-wallpaper.jpg") !important;
 	font-family: serif;
-	background: #3c1115;
-	background: url("../images/red-wallpaper.jpg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	color: black;
+	background-size: 100% 100%;
 }
 
-h1{
-	margin: 30px 0 10px 0;
+#header{
+	margin: 40px 0 20px 0;
 	color:gold;
 	font-family: cursive;
-	font-size: 80px;
+	font-size: 90px;
 	font-weight:bold;
 }
 
-#pages{
-	background:url("../images/wine-barrel.png");
-	background-repeat: no-repeat;
-	background-position:center, center;
-	width:auto;
-	height: 750px;
-	margin-top: 0px;
+#instructions-div{
+	color: #3c1115;
 }
 
-#start-page{
-	padding-top: 150px;
-	width: 500px;
-	margin:auto;
-}
-
-#start-page h4{
-	font-size: 50px;
+#instructions-header{
+	font-size: 60px;
+	font-weight:30px;
 	font-family:cursive;
-	font-weight: bold;
 }
 
-#start-page p{
+#instructions{
 	font-size:30px;
-	padding: 20px 0 20px 0;
 }
 
-button{
+
+img{
+	width:380px;
+	height: 250px;
+}
+
+#wrapper{
+		background:url("../images/wine-barrel.png");
+}
+
+#sub-wrapper{
+	height: 730px;
+	color:white;
+	padding-top:180px;
+}
+
+#quiz-area{
+	padding: 0 50px 0 50px;
+	text-align: center;
+}
+
+/*Buttons*/
+#start{
 	width:150px;
 	height:75px;
 	font-size:25px;
@@ -50,77 +57,30 @@ button{
 	border-radius: 20px;
 	color: gold;
 	background: #3c1115;
+	margin-top: 10px;
+}
+
+.answer-button{
+	width:150px;
+	height:75px;
+	font-size:25px;
+	font-weight:20px;
+	border-radius: 10px;
+	color: gold;
+	background: #3c1115;
+}
+
+#start-over{
+		width:150px;
+	height:75px;
+	font-size:25px;
+	font-weight:20px;
+	border-radius: 10px;
+	color: gold;
+	background: #3c1115;
 }
 
 button:hover{
 	border: 1px solid gold;
-}
-
-#instructions{
-	width:200px;
-}
-
-#quiz{
-	padding-top: 130px;
-	width: 560px;
-	margin:auto;
-}
-
-#timer{
-	font-size:40px;
-	font-weight:bold;
-}
-
-#quiz h4{
-	font-size: 50px;
-	font-family:serif;
-	font-weight: bold;
-}
-
-#quiz h3{
-	width:250px;
-	font-weight:bold;
-}
-
-input{
-	float: left;
-}
-
-form{
-	margin-left:185px;
-}
-
-#next{
-	margin:15px 0 0 0;
-}
-
-#results{
-	padding-top: 150px;
-	width: 500px;
-	margin:auto;
-}
-
-#results h4{
-	font-size: 70px;
-	font-family:cursive;
-	font-weight: bold;
-}
-
-#results h3{
-	font-size:25px;
-	padding: 10px 0 10px 0;
-	font-weight:bold;
-}
-
-.quizDisplay{
-	display:none;
-}
-
-.resultsDisplay{
-	display: none;
-}
-
-.submitDisplay{
-	display:none;
 }
 

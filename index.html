@@ -6,75 +6,49 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>Trivia Game</title>
+	<title>Trivia</title>
 
+	<!-- CSS Reset -->
 	<link rel="stylesheet" text="text/css" href="assets/css/reset.css">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- CSS -->
 	<link rel="stylesheet" text="text/css" href="assets/css/style.css">
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
+<!-- ========================BODY========================== -->
 <body>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h1>Test Your Inner Sommelier</h1>
+			<div class="col-md-2">
+			</div>
+			<div class="col-lg-8">
+				<h1 id="header">Wine Trivia</h1>
+					<div id="wrapper">
+		      	<div id="sub-wrapper">
+			        <div id="quiz-area">
+			        	<div id="instructions-div">
+			        	<h4 id=instructions-header>INSTRUCTIONS</h4>
+									<strong><p id="instructions">This quiz on random wine facts has 10 multiple choice questions. You will have 30 seconds to answer each question. Good Luck!</p></strong>
+								</div>
+			          <button id="start">Start</button>
+	        		</div>
+      			</div>
+    			</div>
+			</div>
+			<div class="col-md-2">
 			</div>
 		</div>
+	</div><!-- End Container -->
 
-		<div class="row">
-			<div class="col-md-12">
-		
-				<section id="pages">
-					
-					<!--Start Page -->
-					<div id="start-page">
-						<h4>INSTRUCTIONS</h4>
-						<p>This quiz on random wine facts has 10 multiple choice questions. You will have 30 seconds to answer each question. Good Luck!</p>
-						<button id="start">Start</button>
-					</div>
-
-					<!--Questions Pages -->
-					<div id="quiz" class="quizDisplay">
-						<div id="timer"></div>
-
-						<h4 id="question">Question goes here</h4>
-
-						<div id="answers">
-							<form>
-								<input type="radio" name="answer" value="answer1" class="radio" id="radio1"><h3 id="answer1"></h3>
-								<input type="radio" name="answer" value="answer2" id="radio2" class="radio">
-								<h3 id="answer2"></h3>
-								<input type="radio" name="answer" value="answer3" id="radio3" class="radio">
-								<h3 id="answer3"></h3>
-							</form>
-
-							<button id="next">Next</button>
-							<button id="submit" class="submitDisplay">Your Results</button>
-						</div>
-					</div>	
-
-					<!--Results Display-->
-					<div id="results" class="resultsDisplay">
-						<h4>Your Results</h4>
-
-						<h3 id="correct">Correct Answers:</h3>
-
-						<h3 id="incorrect">Incorrect Answers:</h3>
-					</div>
-
-				</section>
-			</div>
-		</div>
-	</div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<!-- Javascript -->
 <script type="text/javascript" src="assets/javascript/app.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 </html>
