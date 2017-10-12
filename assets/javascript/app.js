@@ -16,17 +16,17 @@ var myQuestions = [
     question: "Rioja is a wine from Spain, but what is Rioja?",
     answers: ["A variety of grape", "A region in northern Spain", "A Spanish word meaning 'King of wines'"],
     correctAnswer: "A region on northern Spain",
-    image: "assets/images/sangiovese-grape.jpg"
+    image: "assets/images/rioja.jpg"
   },{
     question: "In Portugal, what is a ‘Quinta’?",
     answers: ["The vintage or year of harvest", "A wine-making estate", "A variety of grape used in vintage port"],
     correctAnswer: "A wine-making estate",
-    image: "assets/images/sangiovese-grape.jpg"
+    image: "assets/images/quinta.png"
   },{
     question: "Where is the wine region of Mendoza?",
     answers: ["Argentina", "Chile", "Spain"],
     correctAnswer: "Argentina",
-    image: "assets/images/sangiovese-grape.jpg"
+    image: "assets/images/mendoza.jpg"
   },{
     question: "Trichloranisole is more commonly known as what?",
     answers: ["Residual Sugar", "Fruit Acid", "Cork Taint"],
@@ -36,7 +36,7 @@ var myQuestions = [
     question: "What is ‘Cava’?",
     answers: ["The grape used for Spanish sparkling wine", "The French term for a wine cellar", "Sparkling wines made in Spain"],
     correctAnswer: "Sparkling wines made in Spain",
-    image: "assets/images/sangiovese-grape.jpg"
+    image: "assets/images/cava.jpg"
   },{
     question: "Which wine is sometimes opened with a sword?",
     answers: ["Vin de sabre", "Champagne", "Port"],
@@ -51,7 +51,7 @@ var myQuestions = [
     question: "Fermenting in small oak barrels is common for which variety?",
     answers: ["Riesling", "Chardonnay", "Sauvignon Blanc"],
     correctAnswer: "Chardonnay",
-    image: "assets/images/sangiovese-grape.jpg"
+    image: "assets/images/oak-barrel.jpg"
   }];
 
 var timer;
