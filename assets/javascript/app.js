@@ -80,7 +80,7 @@ var game = {
     panel.html("<h2>" + myQuestions[this.currentQuestion].question + "</h2>");
 
     for (var i = 0; i < myQuestions[this.currentQuestion].answers.length; i++) {
-      panel.append("<button class='answer-button' id='button' data-name='" + myQuestions[this.currentQuestion].answers[i]
+      panel.append("<button class='btn answer-button' id='button' data-name='" + myQuestions[this.currentQuestion].answers[i]
       + "'>" + myQuestions[this.currentQuestion].answers[i] + "</button>");
     }
   },
@@ -114,14 +114,14 @@ var game = {
 
     clearInterval(window.timer);
 
-    panel.html("<h2>All done, heres how you did!</h2>");
+    panel.html("<h2>All done, here's how you did!</h2>");
 
     $("#counter-number").html(this.counter);
 
     panel.append("<h3>Correct Answers: " + this.correct + "</h3>");
     panel.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
     panel.append("<h3>Unanswered: " + (myQuestions.length - (this.incorrect + this.correct)) + "</h3>");
-    panel.append("<br><button id='start-over'>Start Over?</button>");
+    panel.append("<br><button class='btn' id='start-over'>Start Over?</button>");
   },
 
   clicked: function(e) {
@@ -140,7 +140,7 @@ var game = {
 
     clearInterval(window.timer);
 
-    panel.html("<h2>Nope!</h2>");
+    panel.html("<h2>Sorry!</h2>");
     panel.append("<h3>The Correct Answer was: " + myQuestions[this.currentQuestion].correctAnswer + "</h3>");
     panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
 
@@ -189,7 +189,6 @@ $(document).on("click", ".answer-button", function(e) {
 
 //Start Quiz
 $(document).on("click", "#start", function() {
-  $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>");
+  $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30</span></h2>");
   game.loadQuestion.bind(game)();
 });
-

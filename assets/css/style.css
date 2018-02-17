@@ -1,76 +1,110 @@
+
 body{
 	text-align:center;
-	background: url("../images/red-wallpaper.jpg") !important;
-	font-family: serif;
-	background-size: 100% 100%;
+	background: url("../images/red-wallpaper.jpg")!important;
+	margin:0;
+	font-family: 'Gentium Book Basic', serif;
+	font-weight:700;
+	font-size:20px;
 }
 
-#header{
-	margin: 40px 0 20px 0;
+.container{
+	background:url("../images/wine-barrel.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	margin: 0 auto;
+	padding: 0px 30%;
+	height: 650px;
+}
+
+h1{
+	margin: 30px auto 10px auto;
 	color:gold;
-	font-family: cursive;
-	font-size: 90px;
-	font-weight:bold;
+	font-family: 'Dancing Script', cursive;
+	font-size: 400%;
+	font-weight:700;
+}
+
+h2 {
+	margin-top:0px;
+	padding:0;
+	color: #3c1115;
+	font-size:180%;
+}
+
+h3 {
+	margin-top:10px;
+	padding:0;
+	color: #3c1115;
+	font-size:130%;
 }
 
 #instructions-div{
 	color: #3c1115;
+	font-family: 'Gentium Book Basic', serif;
+	font-weight: 700;
+	font-size:130%;
+
 }
 
-#instructions-header{
-	font-size: 60px;
-	font-weight:30px;
-	font-family:cursive;
+.instructions-header{
+	font-size: 200%;
+	font-family: 'Dancing Script', cursive;
+	font-weight: 700;
 }
 
-#instructions{
-	font-size:30px;
+.instructions{
+	margin-top:25px;
+	line-height:120%;
+	text-align: justify;
 }
 
 img{
 	border-radius: 5px;
-	width:390px;
-	height: 280px;
-}
-
-#wrapper{
-	background:url("../images/wine-barrel.png");
-}
-
-#sub-wrapper{
-	height: 730px;
-	color:#3c1115;
-	padding-top:170px;
-
+	width:310px;
+	height: 200px;
+	margin-top:10px;
 }
 
 #quiz-area{
 	padding: 0 50px 0 50px;
 	text-align: center;
+	padding-top:150px;
+}
+
+#sub-wrapper{
+	margin-top:20px;
+	font-size:80%;
+	color:#3c1115;
 }
 
 /*Buttons*/
-#start{
+.btn {
+	font-size:120%;
 	width:150px;
-	height:75px;
-	font-size:25px;
-	font-weight:20px;
-	border-radius: 20px;
-	color: gold;
+	height:auto;
+	padding:10px 8px 10px 8px;
+	border-radius: 15px;
 	background: #3c1115;
 	margin-top: 10px;
+	color: gold;
+	border:none;
+	margin-top:20px;
+	font-family: 'Dancing Script', cursive;
+}
+
+.btn:hover{
+	cursor:pointer;
+	border: 1px solid gold;
 }
 
 .answer-button{
 	display: block;
-  width: 50%;
-  height: 20%;
-  margin: 15px auto;
-	font-size:30px;
-	font-weight:20px;
-	border-radius: 10px;
-	color: gold;
-	background: #3c1115;
+  width: 350px;
+  height: auto;
+	margin: 25px auto 0 auto;
+	font-size:140%;
 }
 
 #start-over{
@@ -83,7 +117,71 @@ img{
 	background: #3c1115;
 }
 
-button:hover{
-	border: 1px solid gold;
+@media only screen and (max-width:1023px){
+	.container{
+		padding: 150px 15% 0px 15%;
+	}
+
 }
 
+@media only screen and (max-width:767px){
+	.title{
+		font-size: 350%;
+		margin: 20px auto 20px auto;
+	}
+
+	.container{
+		padding: 120px 10% 0px 10%;
+		height: 330px;
+	}
+
+	#instructions-div{
+		font-size:100%;
+	}
+
+	.instructions-header{
+		font-size: 200%;
+	}
+
+	.instructions{
+		margin-top:20px;
+		line-height:120%;
+		text-align: justify;
+	}
+
+	.btn {
+		font-size:100%;
+		width:120px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.title{
+		font-size: 300%;
+		margin: 20px auto 0px auto;
+	}
+
+	.container{
+		padding: 120px 5% 0px 5%;
+		height: 330px;
+	}
+
+	#instructions-div{
+		font-size:100%;
+	}
+
+	.instructions-header{
+		font-size: 160%;
+	}
+
+	.instructions{
+		margin-top:20px;
+		line-height:110%;
+		text-align: justify;
+	}
+
+	.btn {
+		font-size:100%;
+		width:120px;
+	}
+}
