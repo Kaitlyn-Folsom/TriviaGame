@@ -121,7 +121,7 @@ var game = {
     panel.append("<h3>Correct Answers: " + this.correct + "</h3>");
     panel.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
     panel.append("<h3>Unanswered: " + (myQuestions.length - (this.incorrect + this.correct)) + "</h3>");
-    panel.append("<br><button class='btn' id='start-over'>Start Over?</button>");
+    panel.append("<br><button class='btn' id='start-over'>Start Over</button>");
   },
 
   clicked: function(e) {
@@ -140,7 +140,7 @@ var game = {
 
     clearInterval(window.timer);
 
-    panel.html("<h2>Sorry!</h2>");
+    panel.html("<h2>SORRY!</h2>");
     panel.append("<h3>The Correct Answer was: " + myQuestions[this.currentQuestion].correctAnswer + "</h3>");
     panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
 
@@ -158,7 +158,7 @@ var game = {
 
     this.correct++;
 
-    panel.html("<h2>Correct!</h2>");
+    panel.html("<h2>CORRECT!</h2>");
     panel.append("<img src='" + myQuestions[this.currentQuestion].image + "' />");
 
     if (this.currentQuestion === myQuestions.length - 1) {

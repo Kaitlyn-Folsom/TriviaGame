@@ -30,12 +30,12 @@ h2 {
 	margin-top:0px;
 	padding:0;
 	color: #3c1115;
-	font-size:180%;
+	font-size:170%;
 }
 
 h3 {
 	margin-top:10px;
-	padding:0;
+	padding:3px 0;
 	color: #3c1115;
 	font-size:130%;
 }
@@ -89,7 +89,7 @@ img{
 	background: #3c1115;
 	margin-top: 10px;
 	color: gold;
-	border:none;
+	border:1px solid #3c1115;
 	margin-top:20px;
 	font-family: 'Dancing Script', cursive;
 }
@@ -105,83 +105,211 @@ img{
   height: auto;
 	margin: 25px auto 0 auto;
 	font-size:140%;
-}
-
-#start-over{
-	width:150px;
-	height:75px;
-	font-size:25px;
-	font-weight:20px;
-	border-radius: 10px;
-	color: gold;
-	background: #3c1115;
+	font-family: 'Gentium Book Basic', cursive;
+	font-weight: 400;
 }
 
 @media only screen and (max-width:1023px){
 	.container{
-		padding: 150px 15% 0px 15%;
+		padding: 0px 20%;
+		height: 500px;
 	}
-
-}
-
-@media only screen and (max-width:767px){
-	.title{
-		font-size: 350%;
-		margin: 20px auto 20px auto;
+	
+	h1{
+		margin: 30px auto 10px auto;
+		font-size: 370%;
 	}
-
-	.container{
-		padding: 120px 10% 0px 10%;
-		height: 330px;
+	
+	h2 {
+		font-size:140%;
 	}
-
+	
+	h3 {
+		margin-top:8px;
+		padding:3px 0;
+		font-size:110%;
+	}
+	
 	#instructions-div{
-		font-size:100%;
+		font-size:110%;
+		padding-top:10px;
+	
 	}
-
+	
 	.instructions-header{
-		font-size: 200%;
+		font-size: 190%;
 	}
-
+	
 	.instructions{
 		margin-top:20px;
-		line-height:120%;
-		text-align: justify;
+		line-height:130%;
 	}
-
+	
+	img{
+		border-radius: 5px;
+		width:250px;
+		height: 160px;
+		margin-top:10px;
+	}
+	
+	#quiz-area{
+		padding: 120px 50px 0 50px;
+	}
+	
+	#sub-wrapper{
+		margin-top:10px;
+		font-size:80%;
+	}
+	
+	/*Buttons*/
 	.btn {
 		font-size:100%;
 		width:120px;
+		padding:10px 8px 10px 8px;
+		margin-top: 15px;
+
+	}
+	
+	.answer-button{
+		width: 290px;
+		margin: 15px auto 0 auto;
+		font-size:100%;
+	}
+}
+
+@media only screen and (max-width:767px){
+	.container{
+		padding: 0px 15%;
+		height: 500px;
+	}
+	
+	h1{
+		margin: 30px auto 0px auto;
+		font-size: 350%;
+	}
+	
+	h2 {
+		font-size:140%;
+	}
+	
+	h3 {
+		margin-top:8px;
+		padding:3px 0;
+		font-size:100%;
+	}
+	
+	#instructions-div{
+		font-size:100%;
+		padding-top:20px;
+	
+	}
+	
+	.instructions-header{
+		font-size: 190%;
+	}
+	
+	.instructions{
+		margin-top:20px;
+		line-height:120%;
+	}
+	
+	img{
+		border-radius: 5px;
+		width:250px;
+		height: 160px;
+		margin-top:10px;
+	}
+	
+	#quiz-area{
+		padding: 100px 45px 0 45px;
+	}
+	
+	#sub-wrapper{
+		margin-top:10px;
+		font-size:80%;
+	}
+	
+	/*Buttons*/
+	.btn {
+		font-size:100%;
+		width:120px;
+		padding:10px 8px 10px 8px;
+		margin-top: 15px;
+
+	}
+	
+	.answer-button{
+		width: 270px;
+		margin: 15px auto 0 auto;
+		font-size:100%;
 	}
 }
 
 @media screen and (max-width:480px) {
-	.title{
-		font-size: 300%;
-		margin: 20px auto 0px auto;
-	}
-
 	.container{
-		padding: 120px 5% 0px 5%;
-		height: 330px;
+		padding: 0px 5%;
+		height: 450px;
 	}
-
+	
+	h1{
+		margin: 30px auto 0px auto;
+		font-size: 300%;
+	}
+	
+	h2 {
+		font-size:120%;
+	}
+	
+	h3 {
+		margin-top:8px;
+		padding:3px 0;
+		font-size:90%;
+	}
+	
 	#instructions-div{
 		font-size:100%;
+		padding-top:20px;
+	
 	}
-
+	
 	.instructions-header{
 		font-size: 160%;
 	}
-
+	
 	.instructions{
 		margin-top:20px;
 		line-height:110%;
-		text-align: justify;
 	}
-
+	
+	img{
+		border-radius: 5px;
+		width:230px;
+		height: 140px;
+		margin-top:10px;
+	}
+	
+	#quiz-area{
+		padding: 0 45px 0 45px;
+		padding-top:90px;
+	}
+	
+	#sub-wrapper{
+		margin-top:10px;
+		font-size:80%;
+	}
+	
+	/*Buttons*/
 	.btn {
-		font-size:100%;
-		width:120px;
+		font-size:90%;
+		width:100px;
+		padding:8px 7px 8px 7px;
+		margin-top: 15px;
+
+	}
+	
+	.answer-button{
+		width: 190px;
+		margin: 15px auto 0 auto;
+		font-size:90%;
 	}
 }
